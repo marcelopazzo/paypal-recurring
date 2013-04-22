@@ -21,6 +21,8 @@ module PayPal
       attr_accessor :refund_type
       attr_accessor :return_url
       attr_accessor :start_at
+      attr_accessor :tax_id
+      attr_accessor :tax_id_type
       attr_accessor :token
       attr_accessor :transaction_id
       attr_accessor :item_category
@@ -68,7 +70,9 @@ module PayPal
           :item_category,
           :item_name,
           :item_amount,
-          :item_quantity
+          :item_quantity,
+          :tax_id,
+          :tax_id_type
         ).merge(
           :payment_action => "Authorization",
           :no_shipping => 1,
@@ -141,7 +145,9 @@ module PayPal
           :item_category,
           :item_name,
           :item_amount,
-          :item_quantity
+          :item_quantity,
+          :tax_id,
+          :tax_id_type
         ).merge(:payment_action => "Sale")
 
         request.run(:payment, params)
@@ -196,7 +202,9 @@ module PayPal
           :item_category,
           :item_name,
           :item_amount,
-          :item_quantity
+          :item_quantity,
+          :tax_id,
+          :tax_id_type
         )
         request.run(:create_profile, params)
       end

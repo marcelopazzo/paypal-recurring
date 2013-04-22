@@ -81,6 +81,8 @@ module PayPal
         :return_url            => "RETURNURL",
         :signature             => "SIGNATURE",
         :start_at              => "PROFILESTARTDATE",
+        :tax_id                => "TAXIDDETAILS",
+        :tax_id_type           => "TAXIDTYPE",
         :token                 => "TOKEN",
         :transaction_id        => "TRANSACTIONID",
         :trial_amount          => "TRIALAMT",
