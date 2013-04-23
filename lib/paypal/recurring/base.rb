@@ -1,6 +1,7 @@
 module PayPal
   module Recurring
     class Base
+      attr_accessor :allow_note
       attr_accessor :amount
       attr_accessor :cancel_url
       attr_accessor :currency
@@ -13,6 +14,7 @@ module PayPal
       attr_accessor :initial_amount_action
       attr_accessor :ipn_url
       attr_accessor :locale
+      attr_accessor :no_shipping
       attr_accessor :outstanding
       attr_accessor :payer_id
       attr_accessor :period
@@ -61,6 +63,7 @@ module PayPal
       def checkout
         params = collect(
           :locale,
+          :allow_note,
           :amount,
           :return_url,
           :cancel_url,
@@ -71,6 +74,7 @@ module PayPal
           :item_name,
           :item_amount,
           :item_quantity,
+          :no_shipping,
           :tax_id,
           :tax_id_type
         ).merge(

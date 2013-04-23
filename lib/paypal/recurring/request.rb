@@ -51,6 +51,7 @@ module PayPal
 
       ATTRIBUTES = {
         :action                => "ACTION",
+        :allow_note            => "ALLOWNOTE",
         :amount                => ["PAYMENTREQUEST_0_AMT", "AMT"],
         :billing_type          => "L_BILLINGTYPE0",
         :cancel_url            => "CANCELURL",
