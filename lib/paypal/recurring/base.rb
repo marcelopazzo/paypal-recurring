@@ -31,6 +31,10 @@ module PayPal
       attr_accessor :item_name
       attr_accessor :item_amount
       attr_accessor :item_quantity
+      attr_accessor :discount_category
+      attr_accessor :discount_name
+      attr_accessor :discount_amount
+      attr_accessor :discount_quantity
       attr_accessor :trial_frequency
       attr_accessor :trial_length
       attr_accessor :trial_period
@@ -74,6 +78,10 @@ module PayPal
           :item_name,
           :item_amount,
           :item_quantity,
+          :discount_category,
+          :discount_name,
+          :discount_amount,
+          :discount_quantity,
           :no_shipping,
           :tax_id,
           :tax_id_type
@@ -150,6 +158,10 @@ module PayPal
           :item_name,
           :item_amount,
           :item_quantity,
+          :discount_category,
+          :discount_name,
+          :discount_amount,
+          :discount_quantity,
           :tax_id,
           :tax_id_type
         ).merge(:payment_action => "Sale")
